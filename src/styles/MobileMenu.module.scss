@@ -1,0 +1,52 @@
+@import 'vars';
+
+.mobile-menu {
+  position: absolute;
+  background: $--hospital-green;
+  color: $--white;
+  z-index: 20;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: -100%;
+
+  .mobile-menu-close-button {
+    transition: color 0.2s;
+    svg {
+      position: absolute;
+      right: 40px;
+      top: 40px;
+      font-size: 1.5rem;
+
+      &:hover {
+        color: $--black;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.mobile-menu a {
+  text-decoration: none;
+  color: $--white;
+  font-weight: bold;
+}
+.mobile-menu ul {
+  padding: 0;
+  margin-top: 40px;
+  margin-left: 40px;
+  list-style: none;
+}
+.mobile-menu ul:nth-child(1) {
+  border-bottom: 1px solid$--very-light-pink;
+}
+.mobile-menu ul li {
+  margin-bottom: 24px;
+}
+.email {
+  font-size: $--sm;
+  font-weight: 300 !important;
+}
+.sign-out {
+  font-size: $--sm;
+  color: $--warning !important;
+}
