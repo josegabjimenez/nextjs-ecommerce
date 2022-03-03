@@ -1,5 +1,8 @@
-import React, { useEffect, useRef, useContext } from 'react';
-import AppContext from '@context/AppContext';
+import React, { useEffect, useRef } from 'react';
+import { useAppContext } from '@context/AppContext';
+import Image from 'next/image';
+
+//? Style
 import { gsap } from 'gsap';
 import styles from '@styles/Card.module.scss';
 import { addToCartImage, addedToCartImage } from '@assets/icons';
@@ -7,10 +10,10 @@ import { addToCartImage, addedToCartImage } from '@assets/icons';
 const Card = ({ product }) => {
   const { title, price, images } = product;
   const {
-    state: { cart, currentProduct },
+    state: { cart },
     addToCart,
     openProduct,
-  } = useContext(AppContext);
+  } = useAppContext();
 
   const handleClick = () => {
     addToCart(product);
@@ -51,15 +54,22 @@ const Card = ({ product }) => {
   }, []);
 
   return (
-    <div ref={cardRef} className="Card-product">
-      <img className="Card-product-img" src={images[0]} alt="Product image" onMouseEnter={(el) => onEnter(el.target)} onMouseLeave={(el) => onLeave(el.target)} onClick={() => openProduct(product)} />
-      <div className="Card-product-info">
+    <div ref={cardRef} className={styles.product}>
+      <img
+        className={styles['product-Image']}
+        src={images[0]}
+        alt="Product image"
+        onMouseEnter={(el) => onEnter(el.target)}
+        onMouseLeave={(el) => onLeave(el.target)}
+        onClick={() => openProduct(product)}
+      />
+      <div className={styles['product-info']}>
         <div>
           <p>${price}</p>
           <p>{title}</p>
         </div>
         <figure>
-          <img
+          <Image
             src={cart.includes(product) ? addedToCartImage : addToCartImage}
             alt="Add product to cart button"
             onMouseEnter={(el) => onEnter(el.target)}

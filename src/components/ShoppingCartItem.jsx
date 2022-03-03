@@ -1,11 +1,13 @@
 import React from 'react';
+
+//? Styles
+import styles from '@styles/ShoppingCart.module.scss';
 import { Close } from '@assets/icons/index';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 const ShoppingCartItem = ({ item, removeFromCart }) => {
   const { title, price, images } = item;
   return (
-    <div className="ShoppingCart-shopping-cart">
+    <div className={styles['shopping-cart']}>
       <figure>
         <img src={images[0]} alt="bike" />
       </figure>

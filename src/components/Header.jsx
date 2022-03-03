@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { useAppContext } from '@context/AppContext';
 // import { DesktopMenu, MobileMenu, ShoppingCart } from '@components/index';
-import { MobileMenu } from '@components/index';
-import { ProductDetail } from '@containers/index';
+import { MobileMenu, DesktopMenu, ShoppingCart } from '@components/index';
+// import { ProductDetail } from '@containers/index';
 // Styles and icons
 import Image from 'next/image';
 import styles from '@styles/Header.module.scss';
@@ -14,7 +14,6 @@ const Header = () => {
   const {
     state: { cart },
   } = useAppContext();
-  console.log(cart);
   const [toggleDesktopMenu, setToggleDesktopMenu] = useState(false);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const [toggleShoppingCart, setToggleShoppingCart] = useState(false);
@@ -83,8 +82,8 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      {/* {toggleDesktopMenu && <DesktopMenu onMouseEnter={handleToggleDesktopMenu} onMouseLeave={handleToggleDesktopMenu} />}
-      <ShoppingCart isOpen={toggleShoppingCart} onClick={() => handleToggleShoppingCart(false)} /> */}
+      {toggleDesktopMenu && <DesktopMenu onMouseEnter={handleToggleDesktopMenu} onMouseLeave={handleToggleDesktopMenu} />}
+      <ShoppingCart isOpen={toggleShoppingCart} onClick={() => handleToggleShoppingCart(false)} />
     </nav>
   );
 };
