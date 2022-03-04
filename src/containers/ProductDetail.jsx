@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useAppContext } from '@context/AppContext';
+import Image from 'next/image';
 import { gsap } from 'gsap';
 //Styles
 import styles from '@styles/ProductDetail.module.scss';
@@ -68,13 +69,12 @@ const ProductDetail = () => {
         <p>{item.title}</p>
         <p>{item.description} </p>
         <button
-          //   className={(styles['primary-button'], styles['add-to-cart-button'], isOnCart && styles['added-cart-button'])}
-          // className={`primary-button add-to-cart-button ${
-          // 	isOnCart && 'added-cart-button'
-          // }`}
+          // className={(styles['primary-button'], styles['add-to-cart-button'], isOnCart && styles['added-cart-button'])}
+          className={`${styles['primary-button']} ${styles['add-to-cart-button']} ${isOnCart && styles['added-cart-button']}`}
+          // className={`primary-button add-to-cart-button ${isOnCart && 'added-cart-button'}`}
           onClick={() => addToCart(product)}
         >
-          <img src={isOnCart ? addedToCartImage : addToCartImage} alt="add to cart" />
+          <Image src={isOnCart ? addedToCartImage : addToCartImage} alt="add to cart" />
           Add{isOnCart && 'ed'} to cart
         </button>
       </div>

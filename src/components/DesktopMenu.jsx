@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import styles from '@styles/DesktopMenu.module.scss';
 
 const DesktopMenu = ({ onMouseEnter, onMouseLeave }) => {
@@ -7,13 +7,13 @@ const DesktopMenu = ({ onMouseEnter, onMouseLeave }) => {
     <div className={styles['desktop-menu']} onMouseEnter={() => onMouseEnter(true)} onMouseLeave={() => onMouseLeave(false)}>
       <ul>
         <li>
-          <a href="/my-orders">My orders</a>
+          <Link href="/my-orders">My orders</Link>
         </li>
         <li>
-          <a href="/my-account">My account</a>
+          <Link href="/my-account">My account</Link>
         </li>
         <li>
-          <a href="/sign-up">Sign out</a>
+          <Link href="/sign-up">Sign out</Link>
         </li>
       </ul>
     </div>

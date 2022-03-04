@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { useAppContext } from '@context/AppContext';
-// import { DesktopMenu, MobileMenu, ShoppingCart } from '@components/index';
-import { MobileMenu, DesktopMenu, ShoppingCart } from '@components/index';
-// import { ProductDetail } from '@containers/index';
-// Styles and icons
+import { DesktopMenu, MobileMenu, ShoppingCart } from '@components/index';
+import { ProductDetail } from '@containers/index';
+//? Styles and icons
 import Image from 'next/image';
 import styles from '@styles/Header.module.scss';
 import { menu, shoppingCart } from '@assets/icons';
@@ -43,13 +42,13 @@ const Header = () => {
     <nav className={styles.nav}>
       <MobileMenu isOpen={toggleMobileMenu} onClick={() => handleToggleMobileMenu(false)} />
 
-      {/* <ProductDetail /> */}
+      <ProductDetail />
 
       <Image src={menu} alt="mobile menu" className={styles.menu} onClick={() => handleToggleMobileMenu(true)} />
       <div className={styles['navbar-left']}>
-        <a href="/" className={styles.logoHeader}>
-          <Image src={logoYardSale} alt="logo" />
-        </a>
+        <Link href="/">
+          <Image src={logoYardSale} className={styles.logoHeader} alt="logo" />
+        </Link>
         <ul>
           <li>
             <a href="/">All</a>

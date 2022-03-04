@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useAppContext } from '@context/AppContext';
 import { ShoppingCartItem } from '@components/index/';
+import Link from 'next/link';
 //Styling
 import { gsap } from 'gsap';
 import styles from '@styles/ShoppingCart.module.scss';
@@ -9,7 +10,6 @@ import { BsArrowLeftCircleFill } from 'react-icons/bs';
 const ShoppingCart = ({ isOpen, onClick }) => {
   const {
     state: { cart, totalPrice },
-    removeFromCart,
   } = useAppContext(); // Here I get the global state through the App Context
 
   const productDetailRef = useRef();
@@ -33,7 +33,6 @@ const ShoppingCart = ({ isOpen, onClick }) => {
       });
       gsap.to(productDetailRef.current, {
         duration: 0.6,
-        // css: { display: 'none' },
       });
     }
   }, [isOpen]);
@@ -46,7 +45,7 @@ const ShoppingCart = ({ isOpen, onClick }) => {
       </div>
       <div className={styles.content}>
         {cart.map((item) => (
-          <ShoppingCartItem key={`orderItem-${item.id}`} item={item} removeFromCart={removeFromCart} />
+          <ShoppingCartItem key={`orderItem-${item.id}`} item={item} />
         ))}
         <div className={styles.order}>
           <p>
@@ -54,7 +53,9 @@ const ShoppingCart = ({ isOpen, onClick }) => {
           </p>
           <p>${totalPrice}</p>
         </div>
-        <button className={styles['primary-button']}>Checkout</button>
+        <Link href="/my-order">
+          <button className={styles['primary-button']}>Checkout</button>
+        </Link>
       </div>
     </aside>
   );

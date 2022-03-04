@@ -25,10 +25,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  img {
-    width: 100px;
-    margin-left: 20px;
-  }
+  width: 100px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 .navbar-left ul,
 .navbar-right ul {

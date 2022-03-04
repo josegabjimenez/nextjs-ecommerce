@@ -24,7 +24,7 @@ const Card = ({ product }) => {
 
   const onEnter = (element) => {
     gsap.to(element, {
-      scale: 1.05,
+      scale: 0.98,
       opacity: 0.9,
       borderRadius: 15,
       duration: 0.5,
@@ -55,8 +55,11 @@ const Card = ({ product }) => {
 
   return (
     <div ref={cardRef} className={styles.product}>
-      <img
+      <Image
         className={styles['product-Image']}
+        width={240}
+        height={240}
+        layout="responsive"
         src={images[0]}
         alt="Product image"
         onMouseEnter={(el) => onEnter(el.target)}

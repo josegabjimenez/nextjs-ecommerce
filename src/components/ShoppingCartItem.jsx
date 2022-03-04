@@ -1,11 +1,13 @@
 import React from 'react';
+import { useAppContext } from '@context/AppContext';
 
 //? Styles
 import styles from '@styles/ShoppingCart.module.scss';
 import { Close } from '@assets/icons/index';
 
-const ShoppingCartItem = ({ item, removeFromCart }) => {
+const ShoppingCartItem = ({ item }) => {
   const { title, price, images } = item;
+  const { removeFromCart } = useAppContext();
   return (
     <div className={styles['shopping-cart']}>
       <figure>
