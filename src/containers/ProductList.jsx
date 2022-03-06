@@ -15,9 +15,8 @@ const ProductList = () => {
 
   return (
     <div className={styles.container}>
-      {products.map((product) => (
-        <Card key={product.id} product={product} />
-      ))}
+      {/* If a product doesn't come with an image, it won't be shown */}
+      {products.map((product) => product.images[0] && <Card key={product.id} product={product} />)}
       <h1>product list</h1>
     </div>
   );

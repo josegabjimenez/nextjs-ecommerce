@@ -44,10 +44,14 @@ const Header = () => {
 
       <ProductDetail />
 
-      <Image src={menu} alt="mobile menu" className={styles.menu} onClick={() => handleToggleMobileMenu(true)} />
+      <div className={styles.menu}>
+        <Image src={menu} alt="mobile menu" onClick={() => handleToggleMobileMenu(true)} />
+      </div>
       <div className={styles['navbar-left']}>
         <Link href="/">
-          <Image src={logoYardSale} className={styles.logoHeader} alt="logo" />
+          <div className={styles.logoHeader}>
+            <Image src={logoYardSale} alt="logo" />
+          </div>
         </Link>
         <ul>
           <li>

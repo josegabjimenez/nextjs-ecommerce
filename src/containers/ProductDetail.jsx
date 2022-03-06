@@ -60,10 +60,10 @@ const ProductDetail = () => {
   return (
     <aside ref={productDetailRef} className={styles['product-detail']}>
       <div className={styles['product-detail-close']} onClick={() => closeProduct()}>
-        {/* <img src={close} alt="close" /> */}
         <Close />
       </div>
-      <img src={item.images[0]} alt="bike" />
+      <Image src={item.images[0]} width={360} height={360} layout="responsive" alt="bike" />
+
       <div className={styles['product-info-detail']}>
         <p>${item.price}</p>
         <p>{item.title}</p>

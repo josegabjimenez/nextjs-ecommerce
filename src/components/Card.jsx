@@ -56,7 +56,6 @@ const Card = ({ product }) => {
   return (
     <div ref={cardRef} className={styles.product}>
       <Image
-        className={styles['product-Image']}
         width={240}
         height={240}
         layout="responsive"

@@ -44,7 +44,7 @@
   color: $--very-light-pink;
 }
 @media (max-width: 640px) {
-  .cards-container {
+  .container {
     grid-template-columns: repeat(auto-fill, 140px);
   }
   .product {
