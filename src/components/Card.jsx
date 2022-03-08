@@ -53,6 +53,15 @@ const Card = ({ product }) => {
     });
   }, []);
 
+  const isOnCart = () => {
+    const filter = cart.filter((item) => item.id == product.id);
+    if (filter.length === 1) {
+      return addedToCartImage;
+    } else {
+      return addToCartImage;
+    }
+  };
+
   return (
     <div ref={cardRef} className={styles.product}>
       <Image
@@ -71,13 +80,7 @@ const Card = ({ product }) => {
           <p>{title}</p>
         </div>
         <figure>
-          <Image
-            src={cart.includes(product) ? addedToCartImage : addToCartImage}
-            alt="Add product to cart button"
-            onMouseEnter={(el) => onEnter(el.target)}
-            onMouseLeave={(el) => onLeave(el.target)}
-            onClick={() => handleClick()}
-          />
+          <Image src={isOnCart()} alt="Add product to cart button" onMouseEnter={(el) => onEnter(el.target)} onMouseLeave={(el) => onLeave(el.target)} onClick={() => handleClick()} />
         </figure>
       </div>
     </div>

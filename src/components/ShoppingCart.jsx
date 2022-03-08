@@ -53,7 +53,7 @@ const ShoppingCart = ({ isOpen, onClick }) => {
           </p>
           <p>${totalPrice}</p>
         </div>
-        <Link href="/my-order">
+        <Link href="/my-order" passHref>
           <button className={styles['primary-button']} onClick={onClick}>
             Checkout
           </button>

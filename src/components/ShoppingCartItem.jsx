@@ -9,7 +9,7 @@ import { Close } from '@assets/icons/index';
 const ShoppingCartItem = ({ item }) => {
   const { title, price, images } = item;
   const { removeFromCart } = useAppContext();
-  console.log(images);
+
   return (
     <div className={styles['shopping-cart']}>
       <figure>

@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 
 //? Styles
 import styles from '@styles/Login.module.scss';
@@ -37,7 +38,7 @@ const Login = () => {
               <button className={`${styles['primary-button']} ${styles.button}`} onClick={handleSubmit}>
                 Log in
               </button>
-              <a href="/">Forgot my password</a>
+              <Link href="/">Forgot my password</Link>
             </form>
             <button className={`${styles['secondary-button']} ${styles['signup-button']}`}>Sign up</button>
           </div>

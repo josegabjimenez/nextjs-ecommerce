@@ -48,29 +48,29 @@ const Header = () => {
         <Image src={menu} alt="mobile menu" onClick={() => handleToggleMobileMenu(true)} />
       </div>
       <div className={styles['navbar-left']}>
-        <Link href="/">
+        <Link href="/" passHref>
           <div className={styles.logoHeader}>
             <Image src={logoYardSale} alt="logo" />
           </div>
         </Link>
         <ul>
           <li>
-            <a href="/">All</a>
+            <Link href="/">All</Link>
           </li>
           <li>
-            <a href="/">Clothes</a>
+            <Link href="/">Clothes</Link>
           </li>
           <li>
-            <a href="/">Electronics</a>
+            <Link href="/">Electronics</Link>
           </li>
           <li>
-            <a href="/">Furnitures</a>
+            <Link href="/">Furnitures</Link>
           </li>
           <li>
-            <a href="/">Toys</a>
+            <Link href="/">Toys</Link>
           </li>
           <li>
-            <a href="/">Others</a>
+            <Link href="/">Others</Link>
           </li>
         </ul>
       </div>

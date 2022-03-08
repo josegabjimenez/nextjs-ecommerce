@@ -10,13 +10,14 @@ const API = 'https://api.escuelajs.co/api/v1/products?limit=20&offset=0';
 
 const ProductList = () => {
   const { products, isLoading } = useGetProducts(API);
+  console.log(products);
 
   if (isLoading) return <h1>Loading...</h1>;
 
   return (
     <div className={styles.container}>
       {/* If a product doesn't come with an image, it won't be shown */}
-      {products.map((product) => product.images[0] && <Card key={product.id} product={product} />)}
+      {products.map((product) => product.images.length > 1 && <Card key={product.id} product={product} />)}
       <h1>product list</h1>
     </div>
   );

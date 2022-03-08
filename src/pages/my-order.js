@@ -12,7 +12,7 @@ const MyOrder = () => {
   return (
     <>
       <Head>
-        <title>Pulguero - Checkout</title>
+        <title>Pulguero - Order</title>
       </Head>
       <div className={styles.MyOrder}>
         <div className={styles.content}>
@@ -27,7 +27,10 @@ const MyOrder = () => {
                 <p>${totalPrice}</p>
               </div>
               {cart.map((item) => (
-                <ShoppingCartItem key={`my-order-item-${item.id}`} item={item} />
+                <>
+                  {console.log(item)}
+                  <ShoppingCartItem key={`my-order-item-${item.id}`} item={item} />
+                </>
               ))}
             </div>
           </div>
