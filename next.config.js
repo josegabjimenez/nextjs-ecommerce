@@ -1,10 +1,18 @@
+const withPWA = require('next-pwa');
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig = withPWA({
+  pwa: {
+    dest: 'public',
+    register: true,
+    mode: 'production',
+    disable: false,
+  },
   reactStrictMode: true,
-  //Añadir la siguiente configuración
+  //Other configurations
   images: {
     domains: ['placeimg.com', 'images.pexels.com'],
   },
-};
+});
 
 module.exports = nextConfig;
