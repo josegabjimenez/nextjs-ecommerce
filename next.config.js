@@ -11,7 +11,7 @@ const nextConfig = withPWA({
   reactStrictMode: true,
   //Other configurations
   images: {
-    domains: ['placeimg.com', 'images.pexels.com'],
+    domains: ['placeimg.com', 'images.pexels.com', 'api.lorem.space'],
   },
 });
 
